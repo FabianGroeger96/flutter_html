@@ -76,28 +76,27 @@ class _PlayerWidgetState extends State<PlayerWidget> {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
-          Padding(padding: EdgeInsets.all(10.0)),
           Row(
             mainAxisSize: MainAxisSize.min,
             children: [
               IconButton(
                 key: Key('play_button'),
                 onPressed: _isPlaying ? null : () => _play(),
-                iconSize: 50.0,
+                iconSize: 45.0,
                 icon: Icon(Icons.play_arrow),
                 color: Colors.cyan,
               ),
               IconButton(
                 key: Key('pause_button'),
                 onPressed: _isPlaying ? () => _pause() : null,
-                iconSize: 50.0,
+                iconSize: 45.0,
                 icon: Icon(Icons.pause),
                 color: Colors.cyan,
               ),
               IconButton(
                 key: Key('stop_button'),
                 onPressed: _isPlaying || _isPaused ? () => _stop() : null,
-                iconSize: 50.0,
+                iconSize: 45.0,
                 icon: Icon(Icons.stop),
                 color: Colors.cyan,
               ),
@@ -133,7 +132,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                     : _duration != null
                         ? _durationText
                         : '',
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 18.0),
               ),
             ],
           ),
