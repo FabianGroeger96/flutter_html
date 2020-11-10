@@ -73,67 +73,71 @@ class _PlayerWidgetState extends State<PlayerWidget> {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Wrap(
+        runSpacing: -15,
         children: <Widget>[
-          Row(
-            mainAxisSize: MainAxisSize.min,
+          Wrap(
+            spacing: -10,
             children: [
               IconButton(
                 key: Key('play_button'),
                 onPressed: _isPlaying ? null : () => _play(),
-                iconSize: 45.0,
+                iconSize: 40.0,
                 icon: Icon(Icons.play_arrow),
-                color: Colors.cyan,
+                color: const Color(0xff00ffff),
+                disabledColor: const Color(0xff00E1E1),
               ),
               IconButton(
                 key: Key('pause_button'),
                 onPressed: _isPlaying ? () => _pause() : null,
-                iconSize: 45.0,
+                iconSize: 40.0,
                 icon: Icon(Icons.pause),
-                color: Colors.cyan,
+                color: const Color(0xff00ffff),
+                disabledColor: const Color(0xff00E1E1),
               ),
               IconButton(
                 key: Key('stop_button'),
                 onPressed: _isPlaying || _isPaused ? () => _stop() : null,
-                iconSize: 45.0,
+                iconSize: 40.0,
                 icon: Icon(Icons.stop),
-                color: Colors.cyan,
+                color: const Color(0xff00ffff),
+                disabledColor: const Color(0xff00E1E1),
               ),
             ],
           ),
-          Column(
-            mainAxisSize: MainAxisSize.min,
+          Wrap(
+            runSpacing: -5,
             children: [
-              Padding(
-                padding: EdgeInsets.all(1.0),
-                child: Stack(
-                  children: [
-                    Slider(
-                      onChanged: (v) {
-                        final Position = v * _duration.inMilliseconds;
-                        _audioPlayer
-                            .seek(Duration(milliseconds: Position.round()));
-                      },
-                      value: (_position != null &&
-                              _duration != null &&
-                              _position.inMilliseconds > 0 &&
-                              _position.inMilliseconds <
-                                  _duration.inMilliseconds)
-                          ? _position.inMilliseconds / _duration.inMilliseconds
-                          : 0.0,
-                    ),
-                  ],
+              Stack(
+                children: [
+                  Slider(
+                    activeColor: Colors.grey[800],
+                    inactiveColor: const Color(0xffffff00),
+                    onChanged: (v) {
+                      final Position = v * _duration.inMilliseconds;
+                      _audioPlayer
+                          .seek(Duration(milliseconds: Position.round()));
+                    },
+                    value: (_position != null &&
+                            _duration != null &&
+                            _position.inMilliseconds > 0 &&
+                            _position.inMilliseconds < _duration.inMilliseconds)
+                        ? _position.inMilliseconds / _duration.inMilliseconds
+                        : 0.0,
+                  ),
+                ],
+              ),
+              Wrap(spacing: -10, children: [
+                SizedBox(width: 25,),
+                Text(
+                  _position != null
+                      ? '${_positionText ?? ''} / ${_durationText ?? ''}'
+                      : _duration != null
+                          ? _durationText
+                          : '',
+                  style: TextStyle(fontSize: 12.0),
                 ),
-              ),
-              Text(
-                _position != null
-                    ? '${_positionText ?? ''} / ${_durationText ?? ''}'
-                    : _duration != null
-                        ? _durationText
-                        : '',
-                style: TextStyle(fontSize: 18.0),
-              ),
+              ]),
             ],
           ),
           //Text('State: $_audioPlayerState')
