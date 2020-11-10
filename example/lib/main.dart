@@ -114,7 +114,6 @@ const htmlData = """
         <a href='https://google.com'><img alt='Google' src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png' /></a>
         <img alt='Alt Text of an intentionally broken image' src='https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30d' />
       </p>
-      <!--
       <h3>Video support:</h3>
       <video controls>
         <source src="https://www.w3schools.com/html/mov_bbb.mp4" />
@@ -125,7 +124,16 @@ const htmlData = """
       </audio>
       <h3>IFrame support:</h3>
       <iframe src="https://google.com"></iframe>
-      -->
+      <p>Morgen ist Wahltag in Amerika. Morgen wird entschieden, wer in Amerika für die nächsten vier Jahre das Amt des Präsidenten einnimmt. Das Wahlsystem in Amerika ist grundlegend anders als das System in der Schweiz. Politologe Dr. Tobias Arnold erklärt, wieso in den USA ein Zweiparteiensystem vorherrschend ist und in welchen Punkten sich das amerikanische Wahlsystem vom schweizerischen Wahlsystem unterscheidet.&nbsp;</p>\r\n         
+      <div class=\"audio-file\">
+      <figure>\n
+      <img alt='audio' src='https://3fach.ch/storage/app/uploads/public/5fa/a57/41b/thumb_18567_140_140_0_0_crop.jpg' />    
+      <figcaption>Test Meli</figcaption>             
+      <audio controls src=\"https://3fach.ch/mp3/stooszyt/01080-1-praesidentschaftswahlen-den-usa.mp3\">\n                    
+      Dein Browser unterstützt die Wiedergabe von MP3-Dateien nicht.\n                
+      </audio>\n            
+      </figure>\n
+      </div>
 """;
 
 class _MyHomePageState extends State<MyHomePage> {

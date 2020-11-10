@@ -134,6 +134,28 @@ class ImageContentElement extends ReplacedElement {
       );
     }
 
+    if (alt.contains("audio")){
+      imageWidget = Center(
+        child: Container(
+          height: 150,
+          width: 150,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              colorFilter: ColorFilter.mode(
+                  Colors.black.withOpacity(0.4),
+                  BlendMode.luminosity),
+              image: NetworkImage(src),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: Opacity(
+              opacity: 1.0,
+              child:
+              Icon(Icons.play_arrow_outlined, color: Colors.white, size: 50.0)),
+        ),
+      );
+    }
+
     return ContainerSpan(
       style: style,
       newContext: context,

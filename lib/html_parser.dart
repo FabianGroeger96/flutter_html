@@ -69,7 +69,7 @@ class HtmlParser extends StatelessWidget {
     // scaling is used, but relies on https://github.com/flutter/flutter/pull/59711
     // to wrap everything when larger accessibility fonts are used.
     return StyledText(
-      textSpan: parsedTree, 
+      textSpan: parsedTree,
       style: cleanedTree.style,
       textScaleFactor: MediaQuery.of(context).textScaleFactor,
     );
@@ -128,10 +128,10 @@ class HtmlParser extends StatelessWidget {
       }
       if (STYLED_ELEMENTS.contains(node.localName)) {
         return parseStyledElement(node, children);
-      } else if (INTERACTABLE_ELEMENTS.contains(node.localName)) {
-        return parseInteractableElement(node, children);
       } else if (REPLACED_ELEMENTS.contains(node.localName)) {
         return parseReplacedElement(node);
+      } else if (INTERACTABLE_ELEMENTS.contains(node.localName)) {
+        return parseInteractableElement(node, children);
       } else if (LAYOUT_ELEMENTS.contains(node.localName)) {
         return parseLayoutElement(node, children);
       } else if (TABLE_STYLE_ELEMENTS.contains(node.localName)) {
@@ -268,7 +268,8 @@ class HtmlParser extends StatelessWidget {
           shrinkWrap: context.parser.shrinkWrap,
           child: Stack(
             children: [
-              if (tree.style?.listStylePosition == ListStylePosition.OUTSIDE || tree.style?.listStylePosition == null)
+              if (tree.style?.listStylePosition == ListStylePosition.OUTSIDE ||
+                  tree.style?.listStylePosition == null)
                 PositionedDirectional(
                   width: 30, //TODO derive this from list padding.
                   start: 0,

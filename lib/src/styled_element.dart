@@ -115,6 +115,7 @@ StyledElement parseStyledElement(
       break;
     case "center":
       styledElement.style = Style(
+        textAlign: TextAlign.center,
         alignment: Alignment.center,
         display: Display.BLOCK,
       );
@@ -163,11 +164,15 @@ StyledElement parseStyledElement(
     case "figcaption":
       styledElement.style = Style(
         display: Display.BLOCK,
+        textAlign: TextAlign.center,
+        alignment: Alignment.center,
       );
       break;
     case "figure":
       styledElement.style = Style(
         margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 40.0),
+        textAlign: TextAlign.center,
+        alignment: Alignment.center,
         display: Display.BLOCK,
       );
       break;

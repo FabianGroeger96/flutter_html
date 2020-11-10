@@ -76,34 +76,36 @@ class _PlayerWidgetState extends State<PlayerWidget> {
       child: Wrap(
         runSpacing: -15,
         children: <Widget>[
-          Wrap(
-            spacing: -10,
-            children: [
-              IconButton(
-                key: Key('play_button'),
-                onPressed: _isPlaying ? null : () => _play(),
-                iconSize: 40.0,
-                icon: Icon(Icons.play_arrow),
-                color: const Color(0xff00ffff),
-                disabledColor: const Color(0xff00E1E1),
-              ),
-              IconButton(
-                key: Key('pause_button'),
-                onPressed: _isPlaying ? () => _pause() : null,
-                iconSize: 40.0,
-                icon: Icon(Icons.pause),
-                color: const Color(0xff00ffff),
-                disabledColor: const Color(0xff00E1E1),
-              ),
-              IconButton(
-                key: Key('stop_button'),
-                onPressed: _isPlaying || _isPaused ? () => _stop() : null,
-                iconSize: 40.0,
-                icon: Icon(Icons.stop),
-                color: const Color(0xff00ffff),
-                disabledColor: const Color(0xff00E1E1),
-              ),
-            ],
+          Center(
+            child: Wrap(
+              spacing: -10,
+              children: [
+                IconButton(
+                  key: Key('play_button'),
+                  onPressed: _isPlaying ? null : () => _play(),
+                  iconSize: 40.0,
+                  icon: Icon(Icons.play_arrow),
+                  color: const Color(0xff00ffff),
+                  disabledColor: const Color(0xff00E1E1),
+                ),
+                IconButton(
+                  key: Key('pause_button'),
+                  onPressed: _isPlaying ? () => _pause() : null,
+                  iconSize: 40.0,
+                  icon: Icon(Icons.pause),
+                  color: const Color(0xff00ffff),
+                  disabledColor: const Color(0xff00E1E1),
+                ),
+                IconButton(
+                  key: Key('stop_button'),
+                  onPressed: _isPlaying || _isPaused ? () => _stop() : null,
+                  iconSize: 40.0,
+                  icon: Icon(Icons.stop),
+                  color: const Color(0xff00ffff),
+                  disabledColor: const Color(0xff00E1E1),
+                ),
+              ],
+            ),
           ),
           Wrap(
             runSpacing: -5,
@@ -127,9 +129,8 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                   ),
                 ],
               ),
-              Wrap(spacing: -10, children: [
-                SizedBox(width: 25,),
-                Text(
+              Center(
+                child: Text(
                   _position != null
                       ? '${_positionText ?? ''} / ${_durationText ?? ''}'
                       : _duration != null
@@ -137,7 +138,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
                           : '',
                   style: TextStyle(fontSize: 12.0),
                 ),
-              ]),
+              ),
             ],
           ),
           //Text('State: $_audioPlayerState')
