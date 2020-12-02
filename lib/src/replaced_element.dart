@@ -65,13 +65,14 @@ class TextContentElement extends ReplacedElement {
 class ImageContentElement extends ReplacedElement {
   final String src;
   final String alt;
+  final dom.Element node;
 
   ImageContentElement({
     String name,
     Style style,
     this.src,
     this.alt,
-    dom.Element node,
+    this.node,
   }) : super(name: name, style: style, node: node);
 
   @override
@@ -133,8 +134,7 @@ class ImageContentElement extends ReplacedElement {
         },
       );
     }
-
-    if (alt.contains("audio")){
+    if (this.node.attributes.containsValue("audio__image")){
       imageWidget = Center(
         child: Container(
           height: 150,

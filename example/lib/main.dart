@@ -134,6 +134,23 @@ const htmlData = """
       </audio>\n            
       </figure>\n
       </div>
+      <p>
+      <a href=\"https://khruangbin.bandcamp.com/album/mordechai\" rel=\"noopener noreferrer\" target=\"_blank\">Mordechai</a> 
+      heisst das neue Album der Band <a href=\"https://www.instagram.com/khruangbin/\" rel=\"noopener noreferrer\" target=\"_blank\">Khruangbin</a>. 
+      Zwei Begriffe, die fast nicht auszusprechen sind sondern mehr wie eine komische Ansammlung von Buchstaben aussieht. 
+      Hinter Khruangbin steckt aber eine dreiköpfige Band. Laura Lee am Bass, Mar Speer an der Gitarre und Donald Jonson am Schlagzeug ergeben eine Mischung aus Thai-Funk aus den 1960erJahren mit weiteren Einflüssen, wie die Filmmusik vom Regisseur Quentin Tarantino.
+      </p>\r\n\r\n
+      <p>Dieser neue Mix aus psychedelischen Klängen gemischt mit ein bisschen Surf Rock ergeben das Album Mordechai von Khruangbin.</p>
+      \r\n    
+      <div class=\"audio\">\n          
+      <figure>\n                
+      <img class=\"audio__image\" src=\"https://preview.3fach.ch/storage/app/uploads/public/5fc/4eb/be0/thumb_16647_140_140_0_0_crop.jpg\" />\n                
+      <figcaption>Whole lotta love</figcaption>\n            
+      </figure>\n      
+      <audio controls src=\"https://preview.3fach.ch/mp3/monde-sonore/00137-1-was-haben-thai-funk-tarantino-und-texas-gemeinsam.mp3\">\n            
+      Dein Browser unterstützt die Wiedergabe von MP3-Dateien nicht.\n        
+      </audio>\n    
+      </div>\r\n\r\n<p>Durch die Quarantänezeit verkriechen sich die zwei Künstler der Band <a href=\"https://www.facebook.com/chromeo/\" rel=\"noopener noreferrer\" target=\"_blank\">Chromeo</a> in ihrem Studio schrieben den Song Clorox Wipe mehr aus einem Unterstützenden Grund, für all die Menschen, die zu Hause in Quarantäne seien. Die Resonanz auf diesen einen Song sei so überwältigend gewesen, dass die zwei New Yorker beschlossen ein ganzes Album daraus zu machen.</p>\r\n\r\n<p>Das Album <a href=\"https://chromeo.bandcamp.com/releases\" rel=\"noopener noreferrer\" target=\"_blank\">Quarantine Casanova</a>, mit elektrofunk vom Feinsten ist nun das Ergebnis und nur wärmstens zu empfehlen.</p>
 """;
 
 class _MyHomePageState extends State<MyHomePage> {

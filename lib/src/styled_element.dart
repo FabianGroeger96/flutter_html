@@ -143,10 +143,19 @@ StyledElement parseStyledElement(
     case "dfn":
       continue italics;
     case "div":
-      styledElement.style = Style(
-        margin: EdgeInsets.all(0),
-        display: Display.BLOCK,
-      );
+      if (element.classes.contains("audio")){
+        styledElement.style = Style(
+          margin: EdgeInsets.symmetric(vertical: 14.0, horizontal: 40.0),
+          textAlign: TextAlign.center,
+          alignment: Alignment.center,
+          display: Display.BLOCK,
+        );
+      } else {
+        styledElement.style = Style(
+          margin: EdgeInsets.all(0),
+          display: Display.BLOCK,
+        );
+      }
       break;
     case "dl":
       styledElement.style = Style(
